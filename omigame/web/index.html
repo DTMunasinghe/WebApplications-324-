@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+div.position {
+    background-color: yellow;
+	width:80px;height:100px;padding:10px;border:1px solid #aaaaaa;
+	display:inline-block;
+}
+</style>
+
+		<title>Enter Game</title>
+	</head>
+<body onload="start()" >
+<h2 style="color:blue;"><center>Welcome to Omi Game</center></h2>
+<br></br>
+<div style="background-color:rgb(0, 102, 102);  padding:100px;" >
+<form method="POST" action = "CheckConnection">
+	Enter Your Name:
+	<input type ="text" name="username"/>
+	<input type="hidden" name="page" value="intGame.jsp" />
+	<input type="submit" value="Connect"/>
+</form>
+</div>
+
+ <script type="text/javascript">
+    function start() {
+ 
+        var eventSource = new EventSource("../CheckConnection");
+         
+        eventSource.onmessage = function(event) {
+         
+            document.getElementById('foo').innerHTML = event.data;
+         
+        };
+         
+    }
+    </script>
+
+</body>
+</html>

@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>OmiServlet</servlet-name>
-        <servlet-class>OmiServlet</servlet-class>
+        <servlet-name>HandleGame</servlet-name>
+        <servlet-class>servlets.HandleGame</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GameServlet</servlet-name>
-        <servlet-class>GameServlet</servlet-class>
+        <servlet-name>CheckConnection</servlet-name>
+        <servlet-class>servlets.CheckConnection</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GameHandle</servlet-name>
+        <servlet-class>servlets.GameHandle</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GmPlay</servlet-name>
+        <servlet-class>servlets.GmPlay</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>OmiServlet</servlet-name>
-        <url-pattern>/OmiServlet</url-pattern>
+        <servlet-name>HandleGame</servlet-name>
+        <url-pattern>/HandleGame</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>GameServlet</servlet-name>
-        <url-pattern>/GameServlet</url-pattern>
+        <servlet-name>CheckConnection</servlet-name>
+        <url-pattern>/CheckConnection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameHandle</servlet-name>
+        <url-pattern>/GameHandle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GmPlay</servlet-name>
+        <url-pattern>/GmPlay</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

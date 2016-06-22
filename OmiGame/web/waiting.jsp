@@ -1,8 +1,3 @@
-<%-- 
-    Document   : waiting
-    Created on : Apr 22, 2016, 8:41:26 PM
-    Author     : Lakshitha
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,38 +7,32 @@
         <title>JSP Page</title>
     </head>
     <body onload="start()">
-        
-        
-        <h1>Hello World!</h1>
-        <br><br>
+        <h1>Hello Player Wait for Other Players</h1>
+    </body>
+    <br><br>
         
         message: <span id="foo"></span>
         <br><br>
-        
-        <form method=GET action="OmiServlet">
-            
-            <input type="hidden" name="page" value="game.jsp" />            
-            <input type="submit" value="Enter Game" />
-               
-      </form> 
-        
-       
-     
     
-     
-    <script type="text/javascript">
+     <script type="text/javascript">
     function start() {
  
-        var eventSource = new EventSource("OmiServlet");
+        var eventSource = new EventSource("CheckConnection");
          
         eventSource.onmessage = function(event) {
          
             document.getElementById('foo').innerHTML = event.data;
-         
+        
         };
          
     }
+    
+    var auto_refresh = setInterval(
+        function ()
+        {start()
+        }, 100); // autorefresh the content of the div after
+                   //every 100 milliseconds(0.1sec)
+    
     </script>
     
-    </body>
 </html>

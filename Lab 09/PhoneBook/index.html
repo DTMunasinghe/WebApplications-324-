@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Phone Book</title>
+	</head>
+	<body> <p> <b>
+		<h2 style="color:blue;">Phone Book Directory</h2>
+		<div style="background-color:rgb(224, 235, 235);  padding:20px;" >
+		<form method=POST action="phonebook">
+			Enter Your Name: 
+			<input type="text" name="userName"/> <br> <br>
+			Enter Your Phone Number:
+			<input type="text" name="number"/> <br> <br> 
+			<input type="submit" value="Submit"/>
+		</form>
+		</div>
+		<br>
+		<div style="background-color:rgb(224, 235, 235); padding:20px;" >
+		<form method=GET action="phonebook">
+			Search by Name: 
+			<input type="text" name="userName"/> <br> <br>
+			<input type="submit" value="Search"/>
+		</form>
+		</div>
+	</body>
+</html>

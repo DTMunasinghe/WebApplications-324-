@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Wait utill other connect</title>
+    </head>
+    <body onload="start()"> 
+      <br><br>
+      <form method= POST action="CheckConnection">            
+      <input type="hidden" name="checkconnection" value="checkconnection" />            
+      </form>         
+       <br><br>        
+        message: <span id="foo"></span>
+        <br><br>
+        
+    <script type="text/javascript">
+    function start() { 
+        var eventSource = new EventSource("CheckConnection");         
+        	eventSource.onmessage = function(event) {         
+          	document.getElementById('foo').innerHTML = event.data;         
+        };         
+    }
+    </script>    
+    </body>
+</html>
